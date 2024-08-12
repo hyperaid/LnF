@@ -126,5 +126,4 @@ If you have any questions or need further information, feel free to reach out to
 Thank you for using Lost and Found (LnF)!
 
 ---
-
-You can copy and paste this content directly into your `README.md` file.
+ 
