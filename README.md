@@ -1,6 +1,7 @@
-Sure, here's the entire `README.md` content in a single code block for easy copy-pasting:
+Here's the `README.md` content formatted in Markdown, ready for use:
 
-```markdown
+---
+
 # Lost and Found (LnF)
 
 Lost and Found (LnF) is a web application that allows users to report lost items, claim found items, and view all reported items. The platform also sends daily emails about reported items and notifications when an item is claimed.
@@ -27,7 +28,7 @@ Lost and Found (LnF) is a web application that allows users to report lost items
 
 ## Project Structure
 
-```
+```plaintext
 LnF/
 ├── backend/          # NodeJS backend with ExpressJS
 ├── frontend/         # ReactJS frontend
@@ -73,7 +74,7 @@ LnF/
 
    Create a `.env` file in the `backend/` directory and add your environment variables. Here's an example:
 
-   ```env
+   ```plaintext
    MONGO_URI=mongodb://localhost:27017/lnf
    JWT_SECRET=your_jwt_secret
    GOOGLE_CLIENT_ID=your_google_client_id
@@ -123,6 +124,7 @@ If you have any questions or need further information, feel free to reach out to
 ---
 
 Thank you for using Lost and Found (LnF)!
-```
 
- 
+---
+
+You can copy and paste this content directly into your `README.md` file.
