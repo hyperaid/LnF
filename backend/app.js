@@ -117,15 +117,10 @@ app.enable('trust proxy');
 app.use(express.json({limit: '50mb'}));
 app.use(cors({
     credentials: true,
-    origin: ['http://localhost:3000', 'https://frontend-gamma-sage.vercel.app','https://lostandfoundiiitdmj.vercel.app']
+    origin: ['http://localhost:3000', 'https://frontend-gamma-sage.vercel.app','https://lostandfoundiiitdmj.vercel.app','https://lnf-f7xy.onrender.com','https://lnf-12icide4x-hyperraids-projects.vercel.app']
 }));
 
-// mailSenderService({
-//     from: "20bec101@iiitdmj.ac.in",
-//     to: ["20bec101@iiitdmj.ac.in","20bec116@iiitdmj.ac.in"],
-//     subject: "test",
-//     text: "test"
-// }).then(() => console.log("done"));
+ 
 
 app.use('/', Router);
 
