@@ -78,7 +78,7 @@ app.enable('trust proxy');
 app.use(express.json({limit: '50mb'}));
 app.use(cors({
     credentials: true,
-    origin: ['http://localhost:3000','https://lnf-f7xy.onrender.com','https://lnf-48z796w3o-hyperraids-projects.vercel.app']
+    origin: ['http://localhost:3000','https://lnf-f7xy.onrender.com','https://lnf-bay.vercel.app']
 }));
 
  
