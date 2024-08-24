@@ -49,7 +49,7 @@ const user = {
     hallNumber: 'X',
     iat: 1662646206,
     locale: 'en',
-    name: 'SHASWAT GUPTA',
+    name: 'abhinav shrma',
     phoneNumber: '1234567890',
     picture: 'https://lh3.googleusercontent.com/a-/AFdZucqPBNNnpOvukiReMQN_WzYdP_LHHhYghppQ9z9I=s96-c',
     registeredAt: 1659191332,
