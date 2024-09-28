@@ -8,30 +8,30 @@ const lostRouter = require('./lost.route');
 const foundRouter = require('./found.route');
 const profileRouter = require('./profile.route');
 
-const router = express.Router();
+const   router = express.Router();
 
 // swagger docs config
 
-const swaggerOptions = {
-  swaggerDefinition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'Documentation',
-    },
-    servers: [
-      { url: 'http://localhost:8000' },
-    ],
-  },
-  apis: ['./routes/*.js'],
-};
+// const swaggerOptions = {
+//   swaggerDefinition: {
+//     openapi: '3.0.0',
+//     info: {
+//       title: 'Documentation',
+//     },
+//     servers: [
+//       { url: 'http://localhost:8000' },
+//     ],
+//   },
+//   apis: ['./routes/*.js'],
+// };
 
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
+// const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
-router.use(
-  '/api-docs',
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDocs),
-);
+// router.use(
+//   '/api-docs',
+//   swaggerUi.serve,
+//   swaggerUi.setup(swaggerDocs),
+// );
 
 // routes
 router.use('/profile', profileRouter);

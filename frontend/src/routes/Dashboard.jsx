@@ -17,8 +17,8 @@ const Dashboard = () => {
     lastName: user ? user.family_name : 'Last Name',
     phoneNumber: user ? user.phoneNumber : '',
     hallNumber: user ? user.hallNumber : '1',
-    roomNumber: user? user.roomNumber : 'F-103',
-    batch: user ? user.batch : '2020',
+    roomNumber: user? user.roomNumber : 'A-103',
+    batch: user ? user.batch : '2021',
   };
 
   const [errors, setErrors] = useState({
@@ -188,7 +188,7 @@ const Dashboard = () => {
                          id='outlined-basic'
                          autoCapitalize={'true'}
                          value={postData.hallNumber}
-                         helperText={'Like 2 😂️'}
+                         helperText={'write 1 for Hall 1'}
                          onChange={(e) => {
                            if (e.target.value.match(/^2$/)) {
                              setErrors({
@@ -209,7 +209,7 @@ const Dashboard = () => {
               <TextField error={errors.roomNumber} margin={'dense'} sx={{ width: screen?'20vw':'55vw' }}
                          id='outlined-basic'
                          value={postData.roomNumber}
-                         helperText={'Like F-103 '}
+                         helperText={'Like A-103 '}
                          onChange={(e) => {
                            if (!e.target.value.match(/^[A-G] - [0-9]{3}$/) &&
                              !e.target.value.match(/^[A-G] -[0-9]{3}$/) &&

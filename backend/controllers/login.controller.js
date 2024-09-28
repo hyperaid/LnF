@@ -17,7 +17,6 @@ const googleLogin = async (req, res) => {
     const resp = await getGoogleOAuthTokens(code);
     console.log("yaha login ho rha hai")
     console.log(resp);
-    // eslint-disable-next-line camelcase
     const { id_token } = resp.data;
     const user = jwt.decode(id_token, { complete: false });
 
@@ -38,12 +37,12 @@ const googleLogin = async (req, res) => {
   }
 
     user.registeredAt = user.iat;
-    console.log(user)
+    console.log(user);
     const person = await addUser(user);
     const token = person.hallNumber ? await createTokenProfile(person) : await createToken(person);
     const userData = decodeToken(token);
     userData.exp = new Date(Date.now() + 1800000);
-    console.log(process.env.NODE_ENV === 'production');
+    // console.log(process.env.NODE_ENV === 'production');
     res.status(202)
       .cookie('token', token, {
         expires: new Date(Date.now() + 1800000),
