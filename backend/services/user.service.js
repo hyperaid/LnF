@@ -14,9 +14,7 @@ const getGoogleOAuthTokens = async (code) => {
     redirect_uri: `${process.env.FRONTEND_URL}/google`,
     grant_type: 'authorization_code',
   };
-  
-  console.log(options);
-  console.log(url);
+ 
   return axios.post(url, qs.stringify(options), {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',

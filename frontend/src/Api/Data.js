@@ -57,7 +57,7 @@ const sendAuthorizationCode = async (code, setUser) => {
     const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/googleLogin`, { tokenId: code }, { withCredentials: true });
     setUser(res.data.userData);
     localStorage.setItem('userDataLost', JSON.stringify(res.data.userData));
-    console.log('hereData');
+
     localStorage.removeItem('state');
     return res.data.userData;
   } catch (err) {
@@ -84,7 +84,7 @@ const claim = async (item) => {
 };
 
 const deleteItem = async (item) => {
-  console.log(item);
+
   if(item.type === 'Lost'){
     return axios.delete(`${import.meta.env.VITE_BACKEND_URL}/lost/delete/${item.id}`, { withCredentials: true });
   }

@@ -2,20 +2,37 @@ import React, { useEffect } from 'react';
 import { CircularProgress } from '@mui/material';
 import { sendAuthorizationCode } from '../Api/Data';
 import { UserContext } from '../utils/UserContext';
+import { Navigate } from 'react-router-dom';
 
 const GoogleLogin = () => {
   const [, setUser] = React.useContext(UserContext);
+  
   useEffect(() => {
-    // eslint-disable-next-line no-use-before-define
     login()
       .then((userData) => {
-        console.log(userData);
-        if (userData.hallNumber) {
-          window.location.assign('/');
+        if (userData && userData.email) {
+          // Check if the email ends with "@iiitbh.ac.in"
+          if (userData.email.endsWith('@iiitbh.ac.in')) {
+            // Email is valid, proceed
+            if (userData.hallNumber) {
+              window.location.assign('/');
+            } else {
+              window.location.assign('/dashboard');
+            }
+            console.log('logged in');
+          } else {
+            // Email is invalid, show a pop-up message
+            alert('You are not authorized to access. Please use your @iiitbh.ac.in email.');
+            window.location.assign('/');  
+          }
         } else {
-          window.location.assign('/dashboard');
+          console.error('User data is not available');
+
         }
-        console.log('logged in');
+      })
+      .catch((error) => {
+        console.error('Error during login', error);
+        alert('Login failed');
       });
   }, []);
 
@@ -38,7 +55,7 @@ const GoogleLogin = () => {
       flexDirection: 'column'
     }}>
       <CircularProgress />
-      <h1>Please Wait</h1>
+      <h1>Please Wait while we verify you</h1>
     </div>
   </>);
 };

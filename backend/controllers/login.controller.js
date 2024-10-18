@@ -15,8 +15,8 @@ const googleLogin = async (req, res) => {
   try {
     const code = req.body.tokenId;
     const resp = await getGoogleOAuthTokens(code);
-    console.log("yaha login ho rha hai")
-    console.log(resp);
+    
+
     const { id_token } = resp.data;
     const user = jwt.decode(id_token, { complete: false });
 

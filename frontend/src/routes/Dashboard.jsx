@@ -13,12 +13,12 @@ const Dashboard = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const defaultFormData = {
-    firstName: user ? user.given_name : 'First Name',
-    lastName: user ? user.family_name : 'Last Name',
+    firstName: user ? user.given_name : '',
+    lastName: user ? user.family_name : '',
     phoneNumber: user ? user.phoneNumber : '',
-    hallNumber: user ? user.hallNumber : '1',
-    roomNumber: user? user.roomNumber : 'A-103',
-    batch: user ? user.batch : '2021',
+    hallNumber: user ? user.hallNumber : '',
+    roomNumber: user? user.roomNumber : '',
+    batch: user ? user.batch : '',
   };
 
   const [errors, setErrors] = useState({

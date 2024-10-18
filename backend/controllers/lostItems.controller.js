@@ -28,9 +28,9 @@ module.exports.foundIt = async (req, res) => {
         subject: "Claimed Item",
       };
       const dir = __dirname.split('\\');// jab production mai jayenge toh yaha / yeh add krna pdega 
-      console.log(dir);
+    
       dir.pop();
-      console.log(__dirname);
+
 
       ejs.renderFile(dir.join('/') + '/views/claim.ejs', {user: req.user}, (err, data) => {
         if (err)

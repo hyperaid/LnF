@@ -14,6 +14,7 @@ const GoogleSignIn = (state) => {
     response_type: 'code',
     prompt: 'consent',
     scope: 'openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile',
+    
   };
   const qs = new URLSearchParams(options);//query string
   console.log(`${loginUrl}?${qs.toString()}`);
