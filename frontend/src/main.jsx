@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './main.css';
 import App from './App/App';
+import ReactGA from 'react-ga4';
+ReactGA.initialize("G-W4J81HVK5Z");
+ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
